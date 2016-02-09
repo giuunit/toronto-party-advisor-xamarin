@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="TorontoPartyAdvisor.FacebookEventPage"
+	BackgroundImage="background.png">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="10,10,10,10" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+			<ScrollView Orientation="Vertical">
+				<StackLayout Orientation="Vertical">
+
+					<!-- title -->
+					<StackLayout Orientation="Horizontal" Padding="0,0,10,0" >
+						<ContentView MinimumWidthRequest="50" WidthRequest="50" MinimumHeightRequest="50" HeightRequest="50" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Padding="0,10,0,0">
+							<Image WidthRequest="50" HeightRequest="50" x:Name="imgEventPic" VerticalOptions="Start" HorizontalOptions="StartAndExpand"></Image>
+						</ContentView>
+						<Label x:Name="lblEventName" FontSize="30" VerticalOptions="Start" />
+					</StackLayout>
+
+					<!-- people -->
+					<StackLayout Orientation="Horizontal" Padding="0,20,0,20">
+						<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+							<Label Text="Attending" HorizontalOptions="Center"></Label>
+							<Label x:Name="lblAttendingCount" HorizontalOptions="Center" FontSize="24"></Label>
+						</StackLayout>
+
+						<StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+							<Label Text="Maybe" HorizontalOptions="Center"></Label>
+							<Label x:Name="lblMaybeCount" HorizontalOptions="Center" FontSize="24"></Label>
+						</StackLayout>
+					</StackLayout>
+
+					<Label x:Name="lblDescription"></Label>
+
+					<!-- time -->
+
+					<Grid Padding="0,20,0,20">
+						<Grid.ColumnDefinitions>
+				    		<ColumnDefinition Width="1*" />
+				    		<ColumnDefinition Width="1*" />
+				    	</Grid.ColumnDefinitions>
+
+				    	<StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+							<Label x:Name="lblStartDay" HorizontalOptions="Center"></Label>
+							<Label x:Name="lblStartTime" FontSize="24" HorizontalOptions="Center"></Label>
+						</StackLayout>
+
+						<StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+							<Label x:Name="lblEndDay" HorizontalOptions="Center"></Label>
+							<Label x:Name="lblEndTime" FontSize="24" HorizontalOptions="Center"></Label>
+						</StackLayout>
+					</Grid>
+				</StackLayout>
+			</ScrollView>
+			<ActivityIndicator IsVisible="false" Opacity="0.5" x:Name="aiLoader" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

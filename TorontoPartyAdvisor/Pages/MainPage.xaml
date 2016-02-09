@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="TorontoPartyAdvisor.MainPage"
+	xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+	BackgroundImage="background.png">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+	      		<RowDefinition Height="*" />
+	    	</Grid.RowDefinitions>
+	    	<Grid.ColumnDefinitions>
+	    		<ColumnDefinition Width="*" />
+	    	</Grid.ColumnDefinitions>
+
+	    	<StackLayout Padding="0,0,0,0" WidthRequest="1000" Orientation="Vertical" HorizontalOptions ="CenterAndExpand" VerticalOptions="End" Spacing="0">
+
+			<ContentView BackgroundColor="#696969" Opacity="0.5" Padding="5,5,5,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+	    		<Label TextColor="White" WidthRequest="1000" FontSize="40" Text="Clubs" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" XAlign="Center" >
+	    			<Label.GestureRecognizers>
+	    				<TapGestureRecognizer Tapped="OnButtonClickedPlaces" NumberOfTapsRequired="1" />
+					</Label.GestureRecognizers>
+	    		</Label>
+	    	</ContentView>
+
+	    	<ContentView BackgroundColor="Gray" Opacity="0.5" Padding="5,5,5,5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+	    		<Label TextColor="White" WidthRequest="1000" FontSize="40" Text="Profil" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" XAlign="Center">
+	    			<Label.GestureRecognizers>
+	    				<TapGestureRecognizer Tapped="OnButtonClickedProfile" NumberOfTapsRequired="1" />
+					</Label.GestureRecognizers>
+	    		</Label>
+	    	</ContentView>
+
+	    	</StackLayout>
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

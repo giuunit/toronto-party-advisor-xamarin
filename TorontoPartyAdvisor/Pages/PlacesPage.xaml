@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="TorontoPartyAdvisor.PlacesPage"
+	xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+	BackgroundImage="background.png">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+			<ListView x:Name="lvPlaces" ItemsSource="{Binding Places}" SeparatorColor="Gray" SeparatorVisibility="Default" RowHeight="80" BackgroundColor="Transparent" ItemSelected="OnItemClickedPlace" >
+				<ListView.ItemTemplate>
+			      <DataTemplate>
+				      <ViewCell>
+				      	<ViewCell.View>
+				      		<Grid Padding="15,0,15,0">
+				      			<Grid.ColumnDefinitions>
+						    		<ColumnDefinition Width="1*" />
+						    		<ColumnDefinition Width="3*" />
+						    		<ColumnDefinition Width="1*" />
+						    	</Grid.ColumnDefinitions>
+						    	<controls:CircleImage Grid.Column="0" Source="{Binding ImagePath}" BorderThickness="2" BorderColor="Gray" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" HorizontalOptions="Center"  />
+		      					<Label HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Text="{Binding Name}" FontSize="24" BackgroundColor="Transparent" ></Label>
+	      						<Label HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" Text="{Binding FormattedDistance}" FontSize="18"></Label>
+				      		</Grid>
+				      	</ViewCell.View>
+				      </ViewCell>
+			      </DataTemplate>
+			    </ListView.ItemTemplate>
+			</ListView>
+
+			<ActivityIndicator IsVisible="false" Opacity="0.5" BackgroundColor="Transparent" x:Name="aiLoader" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

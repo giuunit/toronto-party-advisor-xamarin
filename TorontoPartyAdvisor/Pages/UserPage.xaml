@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="TorontoPartyAdvisor.UserPage"
+	Title="My Profile"
+	BackgroundImage="background.png">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="10,10,10,10" />
+	</ContentPage.Padding>
+
+	<ContentPage.Content>
+		<Grid>
+	 		<ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+		 		<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+					<StackLayout VerticalOptions="Start" Orientation="Horizontal" HorizontalOptions="Fill">
+						<Image HeightRequest="125" WidthRequest="125" x:Name="imgUser"></Image>
+						<ContentView Padding="10, 0, 0, 0">
+							<StackLayout Orientation="Vertical">
+								<Label FontSize="24" x:Name="lblUserName"></Label>
+								<Label FontSize="24" x:Name="lblGender"></Label>
+							</StackLayout>
+						</ContentView>
+					</StackLayout>
+					<ContentView Padding="0, 30, 0, 30" VerticalOptions="CenterAndExpand">				
+						<Label FontSize="68" x:Name="lblUserPoints" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+					</ContentView>
+					<Button  FontSize="12" BackgroundColor="Transparent" Text="Log off" BorderWidth="2" BorderColor="White" Clicked="OnButtonClickedLogOff" VerticalOptions="End" HorizontalOptions="End"></Button>
+					</StackLayout>
+			</ScrollView>
+
+			<ActivityIndicator IsVisible="false" Opacity="0.5" BackgroundColor="Black" x:Name="aiLoader" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

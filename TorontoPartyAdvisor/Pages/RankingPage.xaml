@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="TorontoPartyAdvisor.RankingPage"
+	Title="Ranking"
+	BackgroundImage="background.png">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" Android="10,10,10,10" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+
+			<ListView x:Name="lvRanking" ItemsSource="{Binding RankingItems}" RowHeight="70" >
+				<ListView.ItemTemplate>
+			      <DataTemplate>
+				      <ViewCell>
+				      	<ViewCell.View>
+				      		<StackLayout Orientation="Horizontal" Padding="10, 0, 20, 0">
+				      			<Image HeightRequest="70" Source="{Binding FacebookPictureUrl}"></Image>
+				      			<ContentView VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="10, 0, 0, 0">
+					      			<Label FontSize="24" Text="{Binding Name}" ></Label>
+				      			</ContentView>
+				      			<Label FontSize="24" Text="{Binding Score}" VerticalOptions="Center" HorizontalOptions="End"></Label>
+				      		</StackLayout>
+				      	</ViewCell.View>
+				      </ViewCell>
+			      </DataTemplate>
+			    </ListView.ItemTemplate>
+			</ListView>
+
+			<ActivityIndicator IsVisible="false" Opacity="0.5" BackgroundColor="Black" x:Name="aiLoader" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
