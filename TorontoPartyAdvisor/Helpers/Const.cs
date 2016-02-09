@@ -9,7 +9,7 @@ namespace TorontoPartyAdvisor
 		public const string PLACES_AKAVACHE_KEY = "PLACES";
 		public const string PLACES_AKAVACHE_PING_KEY = "PLACES_PING";
 
-		public const string PROJECT_URL = "http://gdotest.cloudapp.net/api";
+		public const string PROJECT_URL = "the link to your api";
 		public const int MILLISECONDS_TIMEOUT_POST_POSITION = 10000;
 		public const string GLOBAL_ERROR_MSG = "An error occured, please check your settings.";
 		public const string NO_USER_MSG_DETAILS = ":(";
